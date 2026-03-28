@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Authentic Ugandan cuisine in the heart of Kampala. Taste the heartbeat of Uganda with our traditional dishes and warm hospitality." />
+  <meta property="og:title" content="Savannah Spice - Authentic Ugandan Restaurant" />
+  <meta property="og:description" content="Experience the rich flavors of Uganda through our handcrafted menu, cultural events, and community spirit." />
+  <meta property="og:image" content="https://placehold.co/1200x630/8B4513/FFFFFF?text=Savannah+Spice" />
+  <title>Savannah Spice - Authentic Ugandan Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light;
+      --primary: #8f4d1e;
+      --primary-strong: #6f3610;
+      --accent: #d87d37;
+      --accent-soft: #f3c190;
+      --bg: #f7f3ed;
+      --bg-alt: #fffaf3;
+      --surface: #ffffff;
+      --text: #1f1b16;
+      --text-muted: #61584b;
+      --line: #dfd4c7;
+      --success: #1f9f63;
+      --radius: 14px;
+      --shadow-sm: 0 8px 20px rgba(39, 27, 17, 0.08);
+      --shadow-lg: 0 14px 45px rgba(39, 27, 17, 0.16);
+      --transition: 220ms ease;
+    }
+
+    [data-theme="dark"] {
+      color-scheme: dark;
+      --primary: #d49a68;
+      --primary-strong: #f0ba8d;
+      --accent: #f9b569;
+      --accent-soft: #5a3c24;
+      --bg: #15110e;
+      --bg-alt: #1d1712;
+      --surface: #231c16;
+      --text: #f5eee4;
+      --text-muted: #c4b19a;
+      --line: #443527;
+      --success: #53d08f;
+      --shadow-sm: 0 10px 26px rgba(0, 0, 0, 0.35);
+      --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+      background: radial-gradient(circle at 2% 4%, rgba(216, 125, 55, 0.12), transparent 28%), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background-color var(--transition), color var(--transition);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Cormorant Garamond", serif;
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(92%, 1200px);
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .alt-bg {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 52px;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .section-title::after {
+      content: "";
+      width: 90px;
+      height: 3px;
+      border-radius: 2px;
+      display: block;
+      margin: 14px auto 0;
+      background: linear-gradient(90deg, var(--accent), transparent);
+    }
+
+    .btn {
+      position: relative;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      border: 1px solid var(--primary);
+      background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: inherit;
+      background: linear-gradient(140deg, rgba(255, 255, 255, 0.22), transparent 40%);
+      pointer-events: none;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+      filter: brightness(1.05);
+      outline: none;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--line);
+    }
+
+    .btn-ghost::before {
+      display: none;
+    }
+
+    .btn-ghost:hover,
+    .btn-ghost:focus-visible {
+      background: var(--surface);
+    }
+
+    .btn-pill {
+      padding: 9px 18px;
+      font-size: 0.9rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 500ms ease, transform 500ms ease;
+    }
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1200;
+      backdrop-filter: blur(10px);
+      background: color-mix(in srgb, var(--surface) 84%, transparent);
+      border-bottom: 1px solid transparent;
+      transition: border-color var(--transition), background-color var(--transition);
+    }
+
+    header.scrolled {
+      border-color: var(--line);
+      background: color-mix(in srgb, var(--surface) 94%, transparent);
+    }
+
+    .header-container {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      text-decoration: none;
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 22px;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--text);
+      position: relative;
+      transition: color var(--transition);
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width var(--transition);
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: var(--primary);
+      outline: none;
+    }
+
+    nav a:hover::after,
+    nav a:focus-visible::after,
+    nav a.current::after {
+      width: 100%;
+    }
+
+    .theme-toggle,
+    .mobile-menu-btn {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 999px;
+      height: 40px;
+      padding: 0 14px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover,
+    .mobile-menu-btn:hover {
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+    }
+
+    .hero {
+      min-height: calc(100vh - 76px);
+      display: grid;
+      align-items: center;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(100deg, rgba(5, 5, 5, 0.6), rgba(13, 9, 6, 0.48)), url("https://placehold.co/1920x1080/8B4513/FFFFFF?text=Ugandan+Cuisine") center / cover no-repeat;
+      z-index: -2;
+      transform: scale(1.05);
+      animation: heroZoom 18s linear infinite alternate;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 75% 30%, rgba(216, 125, 55, 0.24), transparent 28%);
+      z-index: -1;
+    }
+
+    .hero-content {
+      max-width: 820px;
+      text-align: center;
+      margin-inline: auto;
+      color: #fff;
+      padding: 18px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      border: 1px solid rgba(255, 255, 255, 0.46);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      letter-spacing: 0.09em;
+      font-weight: 700;
+      padding: 8px 16px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 7vw, 4.6rem);
+      margin-bottom: 16px;
+      text-wrap: balance;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2.3vw, 1.25rem);
+      margin-bottom: 28px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .hero-btns {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-stats span {
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      background: rgba(19, 16, 13, 0.35);
+    }
+
+    .about-content,
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .about-text h2,
+    .contact-info h3 {
+      color: var(--primary);
+      font-size: clamp(1.85rem, 4vw, 2.5rem);
+      margin-bottom: 14px;
+    }
+
+    .about-image {
+      min-height: 380px;
+      border-radius: var(--radius);
+      background: linear-gradient(165deg, color-mix(in srgb, var(--primary) 65%, #000), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.12rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    .about-image::before {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      background: radial-gradient(circle at 60% 40%, rgba(255, 255, 255, 0.18), transparent 36%);
+      animation: float 7s ease-in-out infinite;
+    }
+
+    .menu-filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 9px 16px;
+      font-weight: 700;
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .menu-grid,
+    .gallery-grid,
+    .events-grid,
+    .footer-content {
+      display: grid;
+      gap: 24px;
+    }
+
+    .menu-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .menu-item,
+    .event-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+
+    .menu-item:hover,
+    .event-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: color-mix(in srgb, var(--accent) 44%, var(--line));
+    }
+
+    .menu-img,
+    .event-img,
+    .gallery-item,
+    .map-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      text-align: center;
+      color: var(--text);
+      background: linear-gradient(120deg, color-mix(in srgb, var(--accent-soft) 55%, transparent), color-mix(in srgb, var(--primary) 16%, transparent));
+    }
+
+    .menu-img,
+    .event-img {
+      min-height: 180px;
+      padding: 10px;
+    }
+
+    .menu-info,
+    .event-info {
+      padding: 18px;
+    }
+
+    .menu-info h3 {
+      color: var(--primary);
+      margin-bottom: 6px;
+      font-size: 1.45rem;
+    }
+
+    .price {
+      color: var(--accent);
+      font-weight: 800;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .reservation-form {
+      max-width: 760px;
+      margin-inline: auto;
+      padding: clamp(22px, 5vw, 34px);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 4px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea,
+    .newsletter-form input {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: color-mix(in srgb, var(--surface) 88%, transparent);
+      border-radius: 10px;
+      color: var(--text);
+      padding: 12px;
+      font: inherit;
+      transition: border-color var(--transition), box-shadow var(--transition), background-color var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus,
+    .newsletter-form input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 20%, transparent);
+      background: var(--surface);
+    }
+
+    .form-actions {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 12px 18px;
+      background: var(--success);
+      color: #fff;
+      font-weight: 700;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .whatsapp-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+      filter: saturate(1.08);
+    }
+    .gallery-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .gallery-item {
+      min-height: 220px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.03) rotate(-0.4deg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .events-grid {
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+
+    .event-date {
+      display: inline-flex;
+      font-size: 0.82rem;
+      letter-spacing: 0.01em;
+      font-weight: 700;
+      color: #fff;
+      border-radius: 999px;
+      padding: 6px 11px;
+      background: linear-gradient(130deg, var(--accent), var(--primary));
+      margin-bottom: 10px;
+    }
+
+    .contact-detail {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 10px;
+      color: var(--text-muted);
+    }
+
+    .map-placeholder {
+      min-height: 360px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .social-links a {
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--text);
+      font-weight: 700;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      transform: translateY(-2px);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    footer {
+      padding: 54px 0 24px;
+      background: color-mix(in srgb, var(--bg-alt) 86%, #000 14%);
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-content {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-bottom: 24px;
+    }
+
+    .footer-col h4 {
+      font-size: 1.45rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 6px;
+    }
+
+    .footer-col a {
+      text-decoration: none;
+      color: var(--text-muted);
+      transition: color var(--transition);
+    }
+
+    .footer-col a:hover {
+      color: var(--primary);
+    }
+
+    .newsletter-form {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .copyright {
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @keyframes heroZoom {
+      from { transform: scale(1.04); }
+      to { transform: scale(1.12); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate3d(0, 0, 0); }
+      50% { transform: translate3d(0, -18px, 0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+    @media (min-width: 761px) and (max-width: 1024px) {
+      .section {
+        padding: 72px 0;
+      }
+
+      .header-container {
+        min-height: 70px;
+        gap: 14px;
+      }
+
+      .mobile-menu-btn {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      nav {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: min(64%, 360px);
+        height: calc(100vh - 70px);
+        background: var(--surface);
+        border-left: 1px solid var(--line);
+        padding: 24px;
+        transition: right var(--transition);
+      }
+
+      nav.active {
+        right: 0;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .hero {
+        min-height: 78vh;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.25rem, 5vw, 3.5rem);
+      }
+
+      .hero p {
+        max-width: 680px;
+        margin-inline: auto;
+      }
+
+      .hero-stats {
+        gap: 8px;
+      }
+
+      .menu-grid,
+      .events-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .reservation-form {
+        max-width: 860px;
+      }
+
+      .form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .about-content,
+      .contact-container {
+        gap: 30px;
+      }
+    }
+    @media (max-width: 940px) {
+      .about-content,
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.2rem, 8vw, 3.8rem);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .mobile-menu-btn {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      nav {
+        position: fixed;
+        top: 76px;
+        right: -100%;
+        width: min(82%, 340px);
+        height: calc(100vh - 76px);
+        background: var(--surface);
+        border-left: 1px solid var(--line);
+        padding: 24px;
+        transition: right var(--transition);
+      }
+
+      nav.active {
+        right: 0;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-btns,
+      .form-actions {
+        flex-direction: column;
+      }
+
+      .btn,
+      .whatsapp-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header">
+    <div class="container header-container">
+      <a href="#home" class="logo">Savannah<span>Spice</span></a>
+      <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
+      <nav id="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#reservations">Reservations</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">Dark Mode</button>
+      </div>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content reveal">
+      <span class="eyebrow">Fine Ugandan Dining</span>
+      <h1>Taste the Heartbeat of Uganda</h1>
+      <p>Elevate your palate with soulful Ugandan classics, bold local ingredients, and modern craft served in a warm Kampala atmosphere.</p>
+      <div class="hero-btns">
+        <a href="#reservations" class="btn">Reserve a Table</a>
+        <a href="#menu" class="btn btn-ghost">View Menu</a>
+      </div>
+      <div class="hero-stats">
+        <span>Chef-curated seasonal menu</span>
+        <span>Locally sourced produce</span>
+        <span>Live events every weekend</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Our Story</h2>
+      <div class="about-content">
+        <div class="about-text reveal">
+          <h2>Rooted in Tradition, Crafted with Love</h2>
+          <p>Founded in the vibrant heart of Kampala, Savannah Spice celebrates Uganda's rich culinary heritage. Our mission is simple: share authentic flavor with hospitality and heart.</p>
+          <p>Every dish tells a story, from the fertile soils of the Rwenzori region to the energy of Owino market. We source locally, cook traditionally, and serve with pride.</p>
+          <p>Join us for an elevated cultural dining experience where every meal is a celebration.</p>
+        </div>
+        <div class="about-image reveal" aria-hidden="true">Authentic Ugandan Kitchen Scene</div>
+      </div>
+    </div>
+  </section>
+  <section id="menu" class="section alt-bg">
+    <div class="container">
+      <h2 class="section-title reveal">Our Menu</h2>
+      <div class="menu-filters reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="starters">Starters</button>
+        <button class="filter-btn" data-filter="mains">Mains</button>
+        <button class="filter-btn" data-filter="specials">Specials</button>
+        <button class="filter-btn" data-filter="drinks">Drinks</button>
+      </div>
+      <div class="menu-grid">
+        <article class="menu-item reveal" data-category="starters">
+          <div class="menu-img">Rolex (Chapati Roll)</div>
+          <div class="menu-info">
+            <h3>Classic Rolex</h3>
+            <span class="price">$8</span>
+            <p>Fresh eggs, tomatoes, onions, and cabbage wrapped in handmade chapati.</p>
+          </div>
+        </article>
+        <article class="menu-item reveal" data-category="starters">
+          <div class="menu-img">Groundnut Soup</div>
+          <div class="menu-info">
+            <h3>Groundnut Soup</h3>
+            <span class="price">$7</span>
+            <p>Creamy peanut soup with smoked fish and garden vegetables.</p>
+          </div>
+        </article>
+        <article class="menu-item reveal" data-category="mains">
+          <div class="menu-img">Matooke and Beef</div>
+          <div class="menu-info">
+            <h3>Matooke and Beef Stew</h3>
+            <span class="price">$14</span>
+            <p>Steamed green bananas served with slow-cooked beef in rich tomato sauce.</p>
+          </div>
+        </article>
+        <article class="menu-item reveal" data-category="mains">
+          <div class="menu-img">Luweero Chicken</div>
+          <div class="menu-info">
+            <h3>Luweero Chicken</h3>
+            <span class="price">$16</span>
+            <p>Free-range chicken marinated in local spices and grilled to perfection.</p>
+          </div>
+        </article>
+        <article class="menu-item reveal" data-category="specials">
+          <div class="menu-img">Royal Feast</div>
+          <div class="menu-info">
+            <h3>Royal Feast</h3>
+            <span class="price">$22</span>
+            <p>A regal platter featuring matooke, posho, beans, beef stew, and fresh greens.</p>
+          </div>
+        </article>
+        <article class="menu-item reveal" data-category="drinks">
+          <div class="menu-img">Passion Juice</div>
+          <div class="menu-info">
+            <h3>Fresh Passion Juice</h3>
+            <span class="price">$5</span>
+            <p>Hand-squeezed passion fruit with a hint of ginger and mint.</p>
+          </div>
+        </article>
+        <article class="menu-item reveal" data-category="drinks">
+          <div class="menu-img">Waragi Cocktail</div>
+          <div class="menu-info">
+            <h3>Waragi Sunset</h3>
+            <span class="price">$9</span>
+            <p>Local banana gin infused with pineapple and grenadine.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="reservations" class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Make a Reservation</h2>
+      <form class="reservation-form reveal" id="bookingForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required />
+          </div>
+          <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" id="date" required />
+          </div>
+          <div class="form-group">
+            <label for="time">Time</label>
+            <select id="time" required>
+              <option value="">Select Time</option>
+              <option value="18:00">6:00 PM</option>
+              <option value="18:30">6:30 PM</option>
+              <option value="19:00">7:00 PM</option>
+              <option value="19:30">7:30 PM</option>
+              <option value="20:00">8:00 PM</option>
+              <option value="20:30">8:30 PM</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="guests">Number of Guests</label>
+            <select id="guests" required>
+              <option value="1">1 Person</option>
+              <option value="2">2 People</option>
+              <option value="3">3 People</option>
+              <option value="4">4 People</option>
+              <option value="5">5+ People</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label for="notes">Special Request</label>
+            <textarea id="notes" rows="3" placeholder="Dietary needs, celebration note, seating preference..."></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn">Confirm Reservation</button>
+          <a href="https://wa.me/256700000000" class="whatsapp-btn">Book via WhatsApp</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="gallery" class="section alt-bg">
+    <div class="container">
+      <h2 class="section-title reveal">Gallery</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item reveal">Street Food Market</div>
+        <div class="gallery-item reveal">Traditional Cooking</div>
+        <div class="gallery-item reveal">Matooke Preparation</div>
+        <div class="gallery-item reveal">Restaurant Interior</div>
+        <div class="gallery-item reveal">Cultural Performance</div>
+        <div class="gallery-item reveal">Fresh Ingredients</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="events" class="section">
+    <div class="container">
+      <h2 class="section-title reveal">Upcoming Events</h2>
+      <div class="events-grid">
+        <article class="event-card reveal">
+          <div class="event-img">Live Afrobeat Night</div>
+          <div class="event-info">
+            <span class="event-date">Friday, March 27, 2026</span>
+            <h3>Afrobeat and Tasting Night</h3>
+            <p>Live band performances, chef pairing menu, and crafted cocktails.</p>
+          </div>
+        </article>
+        <article class="event-card reveal">
+          <div class="event-img">Cooking Class</div>
+          <div class="event-info">
+            <span class="event-date">Saturday, April 4, 2026</span>
+            <h3>Traditional Cooking Class</h3>
+            <p>Learn matooke, rolex, and groundnut soup with our head chefs.</p>
+          </div>
+        </article>
+        <article class="event-card reveal">
+          <div class="event-img">Cultural Festival</div>
+          <div class="event-info">
+            <span class="event-date">Sunday, April 19, 2026</span>
+            <h3>Ugandan Culture Brunch</h3>
+            <p>Brunch buffet, cultural dance, and artisan showcases in one event.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section alt-bg">
+    <div class="container">
+      <h2 class="section-title reveal">Contact Us</h2>
+      <div class="contact-container">
+        <div class="map-placeholder reveal">Google Maps Embed Placeholder</div>
+        <div class="contact-info reveal">
+          <h3>Get in Touch</h3>
+          <div class="contact-detail"><strong>Address:</strong> Plot 45, Kampala Road, Kampala, Uganda</div>
+          <div class="contact-detail"><strong>Phone:</strong> +256 700 000 000</div>
+          <div class="contact-detail"><strong>Email:</strong> hello@savannahspice.ug</div>
+          <div class="contact-detail"><strong>Hours:</strong> Daily, 11:00 AM - 10:00 PM</div>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">Fb</a>
+            <a href="#" aria-label="Instagram">In</a>
+            <a href="#" aria-label="Twitter">Tw</a>
+            <a href="#" aria-label="WhatsApp">Wa</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h4>Savannah Spice</h4>
+          <p>Authentic Ugandan cuisine crafted with love and tradition.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#reservations">Reservations</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p>Subscribe for updates and special offers.</p>
+          <form class="newsletter-form">
+            <label for="newsletter-email" class="sr-only">Email</label>
+            <input id="newsletter-email" type="email" placeholder="Your email" />
+            <button type="submit" class="btn btn-pill">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="copyright">&copy; 2026 Savannah Spice. All rights reserved. Crafted in Uganda.</div>
+    </div>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const themeToggle = document.getElementById("themeToggle");
+    const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+    const nav = document.getElementById("main-nav");
+    const header = document.getElementById("site-header");
+    const bookingForm = document.getElementById("bookingForm");
+    const navLinks = document.querySelectorAll("nav a");
+    const sections = document.querySelectorAll("section[id]");
+
+    const storedTheme = localStorage.getItem("savannah-theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const initialTheme = storedTheme || (prefersDark ? "dark" : "light");
+    root.setAttribute("data-theme", initialTheme);
+    themeToggle.textContent = initialTheme === "dark" ? "Light Mode" : "Dark Mode";
+    themeToggle.setAttribute("aria-pressed", String(initialTheme === "dark"));
+
+    themeToggle.addEventListener("click", () => {
+      const isDark = root.getAttribute("data-theme") === "dark";
+      const nextTheme = isDark ? "light" : "dark";
+      root.setAttribute("data-theme", nextTheme);
+      localStorage.setItem("savannah-theme", nextTheme);
+      themeToggle.textContent = nextTheme === "dark" ? "Light Mode" : "Dark Mode";
+      themeToggle.setAttribute("aria-pressed", String(nextTheme === "dark"));
+    });
+
+    mobileMenuBtn.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("active");
+      mobileMenuBtn.textContent = isOpen ? "Close" : "Menu";
+      mobileMenuBtn.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("active");
+        mobileMenuBtn.textContent = "Menu";
+        mobileMenuBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    const setCurrentLink = () => {
+      let activeId = "home";
+      sections.forEach((section) => {
+        const top = section.offsetTop - 140;
+        if (window.scrollY >= top) activeId = section.id;
+      });
+      navLinks.forEach((link) => {
+        const linked = link.getAttribute("href") === `#${activeId}`;
+        link.classList.toggle("current", linked);
+      });
+    };
+
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("scrolled", window.scrollY > 8);
+      setCurrentLink();
+    });
+
+    setCurrentLink();
+
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const menuItems = document.querySelectorAll(".menu-item");
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+        menuItems.forEach((item) => {
+          item.style.display = filter === "all" || item.dataset.category === filter ? "block" : "none";
+        });
+      });
+    });
+
+    if (bookingForm) {
+      bookingForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("Thank you. Your reservation request has been received.");
+        bookingForm.reset();
+      });
+    }
+
+    const revealItems = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries, io) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach((item) => observer.observe(item));
+
+    const today = new Date().toISOString().split("T")[0];
+    const dateInput = document.getElementById("date");
+    if (dateInput) dateInput.min = today;
+  </script>
+</body>
+</html>
+
+
+
